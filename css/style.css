@@ -157,8 +157,7 @@ button {
     transition: 0.5s ease;
     transform: scale(0, 1);
     transform-origin: left;
-}
-
+}z
 .area-2 .center-area .link-center:hover::after,
 .area-2 .center-area .link-center:hover::before {
     visibility: visible;
@@ -541,7 +540,7 @@ button {
 }
 
 .trend-area .product-trend div a {
-    padding: 12px 0 6px;
+    padding: 28px 0 6px;
     font-size: 18px;
     font-weight: 600;
     color: #1F1A17;
@@ -551,6 +550,7 @@ button {
 
 .trend-area .product-trend div:hover a {
     color: #C88A35;
+
 }
 
 .trend-area .product-trend div p {
@@ -673,22 +673,79 @@ button {
    ========================================================================== */
 
 
+
 .container {
+    
         width: 86%;
         max-width: 1320px;
         margin: auto;
 }
-    border: 1px solid #EAE3D9;
-    box-shadow: 0 10px 30px rgba(28, 22, 17, 0.05);
-    padding: 20px 40px;
+
+.section-three{
+     width: 86%;
+    max-width: 1320px;
+    min-height: 500px;
+    background-color: #F0E3D8;
+    border-radius: 20px;
+     border: 1px solid var(--line);
+    box-shadow: 0 10px 30px rgba(43, 29, 22, 0.05);
+    margin: 90px 90px;
+}
+.customer {
+    width: 100%;
+    max-width: 1320px;
+    min-height: 500px;
+    margin: 90px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    background-color: #F0E3D8;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(217, 160, 102, 0.14), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(164, 99, 58, 0.10), transparent 45%),
+        linear-gradient(135deg, var(--foam), var(--latte));
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 30px rgba(43, 29, 22, 0.05);
+    padding: 50px 90px;
+}
+
+/* decorative quote mark */
+.customer::before {
+    content: "\201C";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Merriweather', serif;
+    font-size: 150px;
+    line-height: 1;
+    color: var(--crema);
+    opacity: 0.18;
+    pointer-events: none;
 }
 
 
 .customer > h2 {
     font-size: 34px;
     font-weight: 700;
-    color: #1F1A17;
+    color: var(--roast);
     letter-spacing: -0.5px;
+    position: relative;
+}
+
+.customer > h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: 12px auto 0;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--crema), var(--caramel));
 }
 
 .customer > p {
@@ -698,8 +755,8 @@ button {
     font-size: 20px;
     font-family: 'Merriweather', serif;
     font-style: italic;
-    line-height: 1.7;
-    color: #4A4036;
+    line-height: 1.8;
+    color: var(--mocha);
 }
 
 .customer > div {
@@ -712,8 +769,14 @@ button {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #C88A35;
-    box-shadow: 0 4px 14px rgba(200, 138, 53, 0.25);
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--caramel), 0 8px 20px rgba(164, 99, 58, 0.25);
+    transition: transform 0.5s var(--ease-spring), box-shadow 0.4s;
+}
+
+.customer > div img:hover {
+    transform: scale(1.06) rotate(-4deg);
+    box-shadow: 0 0 0 3px var(--crema), 0 12px 26px rgba(164, 99, 58, 0.35);
 }
 
 .customer .name-customer {
@@ -722,14 +785,14 @@ button {
 }
 
 .customer .name-customer h4 {
-    color: #1F1A17;
+    color: var(--roast);
     font-size: 19px;
     font-weight: 700;
     padding-bottom: 4px;
 }
 
 .customer .name-customer p {
-    color: #C88A35;
+    color: var(--caramel);
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -737,36 +800,40 @@ button {
 
 .customer > a {
     position: absolute;
-    font-size: 20px;
-    opacity: 0.6;
-    color: #1F1A17;
-    width: 42px;
-    height: 42px;
-    background: #FFFFFF;
+    font-size: 17px;
+    opacity: 0.75;
+    color: var(--roast);
+    width: 44px;
+    height: 44px;
+    background: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(28, 22, 17, 0.1);
-    border: 1px solid #EAE3D9;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--line);
 }
 
 .customer > a:hover {
     opacity: 1;
-    background: #C88A35;
-    color: #FFFFFF;
-    border-color: #C88A35;
+    background: var(--caramel);
+    color: var(--white);
+    border-color: var(--caramel);
+    box-shadow: var(--shadow-accent);
+    transform: scale(1.1);
 }
 
 .customer .left {
     top: 50%;
-    left: 5%;
+    left: 4%;
 }
 
 .customer .right {
     top: 50%;
-    right: 5%;
+    right: 4%;
 }
+/* end section-three area */
+
 /* end section-three area */
 
 /* ==========================================================================
